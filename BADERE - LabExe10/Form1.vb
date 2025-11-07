@@ -1,25 +1,49 @@
 ﻿Imports System.IO
+Imports System.Linq
+
 
 Public Class Form1
-    Private Sub btnSaveSort_Click(sender As Object, e As EventArgs) Handles btnSaveSort.Click
+    Private filePath As String = "numbers.txt"
+    Private Sub btnWrite_Click(sender As Object, e As EventArgs)
         Try
             Dim input As String = txtNumbers.Text
 
-            ' Write to file
-            Using writer As New StreamWriter("numbers.txt")
+
+            ' Check if input is empty
+            If String.IsNullOrWhiteSpace(input) Then
+                MessageBox.Show("Please enter some numbers first.")
+                Return
+            End If
+
+            ' Write input to text file
+            Using writer As New StreamWriter(filePath)
                 writer.WriteLine(input)
             End Using
 
-            ' Read from file
+            MessageBox.Show("Numbers successfully written to file.")
+        Catch ex As Exception
+            MessageBox.Show("Error writing file: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnRead_Click(sender As Object, e As EventArgs) Handles btnRead.Click
+        Try
+            ' Check if file exists
+            If Not File.Exists(filePath) Then
+                MessageBox.Show("File not found. Please write numbers first.")
+                Return
+            End If
+
+            ' Read numbers from file
             Dim fileContent As String
-            Using reader As New StreamReader("numbers.txt")
+            Using reader As New StreamReader(filePath)
                 fileContent = reader.ReadToEnd()
             End Using
 
-            ' Convert to list of integers
+            ' Convert to List of Integers
             Dim numbers As List(Of Integer) = fileContent.Split(" "c).Select(Function(n) Integer.Parse(n.Trim())).ToList()
 
-            ' Sort numbers using LINQ OrderBy
+            ' Sort using LINQ
             Dim sortedNumbers = numbers.OrderBy(Function(n) n).ToList()
 
             ' Display in ListBox
@@ -28,16 +52,13 @@ Public Class Form1
                 Sorted.Items.Add(num)
             Next
 
+            MessageBox.Show("Numbers read and sorted successfully!")
 
-            Console.WriteLine("Sorted Numbers:")
-            For Each num In sortedNumbers
-                Console.WriteLine(num)
-            Next
-
+        Catch ex As FormatException
+            MessageBox.Show("Error: Please ensure all inputs are valid numbers separated by commas.")
         Catch ex As Exception
-            MessageBox.Show("Error: " & ex.Message)
+            MessageBox.Show("Error reading file: " & ex.Message)
         End Try
     End Sub
-
 End Class
 

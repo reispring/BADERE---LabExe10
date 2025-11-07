@@ -22,20 +22,21 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblPrompt = New System.Windows.Forms.Label()
         Me.txtNumbers = New System.Windows.Forms.TextBox()
-        Me.btnSaveSort = New System.Windows.Forms.Button()
         Me.Sorted = New System.Windows.Forms.ListBox()
+        Me.btnWrite = New System.Windows.Forms.Button()
+        Me.btnRead = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'Label1
+        'lblPrompt
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(286, 43)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(81, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Enter numbers: "
+        Me.lblPrompt.AutoSize = True
+        Me.lblPrompt.Location = New System.Drawing.Point(286, 43)
+        Me.lblPrompt.Name = "lblPrompt"
+        Me.lblPrompt.Size = New System.Drawing.Size(81, 13)
+        Me.lblPrompt.TabIndex = 0
+        Me.lblPrompt.Text = "Enter numbers: "
         '
         'txtNumbers
         '
@@ -44,22 +45,31 @@ Partial Class Form1
         Me.txtNumbers.Size = New System.Drawing.Size(210, 20)
         Me.txtNumbers.TabIndex = 1
         '
-        'btnSaveSort
-        '
-        Me.btnSaveSort.Location = New System.Drawing.Point(332, 107)
-        Me.btnSaveSort.Name = "btnSaveSort"
-        Me.btnSaveSort.Size = New System.Drawing.Size(100, 23)
-        Me.btnSaveSort.TabIndex = 2
-        Me.btnSaveSort.Text = "Save and Sort"
-        Me.btnSaveSort.UseVisualStyleBackColor = True
-        '
         'Sorted
         '
         Me.Sorted.FormattingEnabled = True
-        Me.Sorted.Location = New System.Drawing.Point(279, 171)
+        Me.Sorted.Location = New System.Drawing.Point(279, 122)
         Me.Sorted.Name = "Sorted"
         Me.Sorted.Size = New System.Drawing.Size(210, 147)
         Me.Sorted.TabIndex = 3
+        '
+        'btnWrite
+        '
+        Me.btnWrite.Location = New System.Drawing.Point(495, 71)
+        Me.btnWrite.Name = "btnWrite"
+        Me.btnWrite.Size = New System.Drawing.Size(75, 23)
+        Me.btnWrite.TabIndex = 4
+        Me.btnWrite.Text = "Write"
+        Me.btnWrite.UseVisualStyleBackColor = True
+        '
+        'btnRead
+        '
+        Me.btnRead.Location = New System.Drawing.Point(495, 122)
+        Me.btnRead.Name = "btnRead"
+        Me.btnRead.Size = New System.Drawing.Size(75, 23)
+        Me.btnRead.TabIndex = 5
+        Me.btnRead.Text = "Read"
+        Me.btnRead.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -67,10 +77,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnRead)
+        Me.Controls.Add(Me.btnWrite)
         Me.Controls.Add(Me.Sorted)
-        Me.Controls.Add(Me.btnSaveSort)
         Me.Controls.Add(Me.txtNumbers)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblPrompt)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -78,8 +89,9 @@ Partial Class Form1
 
     End Sub
 
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblPrompt As Label
     Friend WithEvents txtNumbers As TextBox
-    Friend WithEvents btnSaveSort As Button
     Friend WithEvents Sorted As ListBox
+    Friend WithEvents btnWrite As Button
+    Friend WithEvents btnRead As Button
 End Class
