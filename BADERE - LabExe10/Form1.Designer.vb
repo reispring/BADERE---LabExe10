@@ -32,7 +32,7 @@ Partial Class Form1
         'lblPrompt
         '
         Me.lblPrompt.AutoSize = True
-        Me.lblPrompt.Location = New System.Drawing.Point(286, 43)
+        Me.lblPrompt.Location = New System.Drawing.Point(31, 27)
         Me.lblPrompt.Name = "lblPrompt"
         Me.lblPrompt.Size = New System.Drawing.Size(81, 13)
         Me.lblPrompt.TabIndex = 0
@@ -40,7 +40,7 @@ Partial Class Form1
         '
         'txtNumbers
         '
-        Me.txtNumbers.Location = New System.Drawing.Point(279, 71)
+        Me.txtNumbers.Location = New System.Drawing.Point(24, 55)
         Me.txtNumbers.Name = "txtNumbers"
         Me.txtNumbers.Size = New System.Drawing.Size(210, 20)
         Me.txtNumbers.TabIndex = 1
@@ -48,14 +48,14 @@ Partial Class Form1
         'Sorted
         '
         Me.Sorted.FormattingEnabled = True
-        Me.Sorted.Location = New System.Drawing.Point(279, 122)
+        Me.Sorted.Location = New System.Drawing.Point(24, 106)
         Me.Sorted.Name = "Sorted"
         Me.Sorted.Size = New System.Drawing.Size(210, 147)
         Me.Sorted.TabIndex = 3
         '
         'btnWrite
         '
-        Me.btnWrite.Location = New System.Drawing.Point(495, 71)
+        Me.btnWrite.Location = New System.Drawing.Point(240, 55)
         Me.btnWrite.Name = "btnWrite"
         Me.btnWrite.Size = New System.Drawing.Size(75, 23)
         Me.btnWrite.TabIndex = 4
@@ -64,7 +64,7 @@ Partial Class Form1
         '
         'btnRead
         '
-        Me.btnRead.Location = New System.Drawing.Point(495, 122)
+        Me.btnRead.Location = New System.Drawing.Point(240, 106)
         Me.btnRead.Name = "btnRead"
         Me.btnRead.Size = New System.Drawing.Size(75, 23)
         Me.btnRead.TabIndex = 5
@@ -76,7 +76,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Thistle
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(347, 301)
         Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.btnWrite)
         Me.Controls.Add(Me.Sorted)
